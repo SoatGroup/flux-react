@@ -1,13 +1,13 @@
 import React from 'react';
 
-class BasketProduct extends React.Component {
+export default class BasketProduct extends React.Component {
   render() {
-    if (!this.props.child) {
+    if (!this.props.children) {
       return null;
     }
     return (
       <div>
-        {this.props.child}
+        {this.props.children}
         <button onClick={() => {}}>Delete</button>
       </div>
     );
@@ -15,5 +15,5 @@ class BasketProduct extends React.Component {
 }
 
 BasketProduct.propTypes = {
-  child: React.PropTypes.element,
+  children: React.PropTypes.element,
 };
