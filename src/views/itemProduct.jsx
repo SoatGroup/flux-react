@@ -1,13 +1,13 @@
 import React from 'react';
 
-class ItemProduct extends React.Component {
+export default class ItemProduct extends React.Component {
   render() {
-    if (!this.props.child) {
+    if (!this.props.children) {
       return null;
     }
     return (
       <div>
-        {this.props.child}
+        {this.props.children}
         <button onClick={() => {}}>Add</button>
       </div>
     );
@@ -15,5 +15,5 @@ class ItemProduct extends React.Component {
 }
 
 ItemProduct.propTypes = {
-  child: React.PropTypes.element,
+  children: React.PropTypes.element,
 };

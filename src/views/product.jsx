@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Product extends React.Component {
+export default class Product extends React.Component {
   render() {
     if (this.props.product === {}) {
       return null;

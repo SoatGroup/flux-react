@@ -2,15 +2,15 @@ import React from 'react';
 import Product from './product';
 import ItemProduct from './itemProduct';
 
-class Basket extends React.Component {
+export default class Shelf extends React.Component {
   render() {
     const products = this.props.products.map(
-      product =>
-        <ItemProduct>
+      (product, index) =>
+        <ItemProduct key={index}>
           <Product product={product} />
         </ItemProduct>
     );
-    if (products.length) {
+    if (!products.length) {
       return null;
     }
     return (
@@ -21,6 +21,6 @@ class Basket extends React.Component {
   }
 }
 
-Basket.propTypes = {
-  products: React.PropTypes.object.isRequired,
+Shelf.propTypes = {
+  products: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
 };
