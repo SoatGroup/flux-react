@@ -1,3 +1,11 @@
 div {
-  border: solid 1px lightskyblue;
+  .half-panel{
+    display: inline-block;
+    width: 50%
+  }
+  .line{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px;
+  }
 }

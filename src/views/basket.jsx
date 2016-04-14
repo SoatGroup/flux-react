@@ -14,7 +14,7 @@ export default class Basket extends React.Component {
       return null;
     }
     return (
-      <div className="basket">
+      <div className="basket half-panel">
         {products}
       </div>
     );

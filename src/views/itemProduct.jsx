@@ -6,7 +6,7 @@ export default class ItemProduct extends React.Component {
       return null;
     }
     return (
-      <div>
+      <div className="line">
         {this.props.children}
         <button onClick={() => {}}>Add</button>
       </div>
