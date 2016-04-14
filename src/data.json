@@ -1,18 +1,26 @@
 [
   {
+    "id": "ID",
     "name":"product1",
-    "price": 19.99
+    "price": 19.99,
+    "quantity": 10
   },
   {
+    "id": "ID2",
     "name":"product2",
-    "price": 19.99
+    "price": 19.99,
+    "quantity": 10
   },
   {
+    "id": "ID3",
     "name":"product3",
-    "price": 19.99
+    "price": 19.99,
+    "quantity": 10
   },
   {
+    "id": "ID4",
     "name":"product4",
-    "price": 19.99
+    "price": 19.99,
+    "quantity": 10
   }
 ]
