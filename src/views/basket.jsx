@@ -1,14 +1,17 @@
 import React from 'react';
 import Product from './product';
 import BasketProduct from './basketProduct';
+import BasketAction from '../actions/basketAction';
 
 export default class Basket extends React.Component {
   render() {
     const products = this.props.products.map(
-      (product, index) =>
-        <BasketProduct key={index}>
+      (product, index) => {
+        const sendDeleteAction = BasketAction.removeProduct.bind(this, product);
+        return (<BasketProduct key={index} onDelete={sendDeleteAction}>
           <Product product={product} />
-        </BasketProduct>
+        </BasketProduct>);
+      }
     );
     if (!products.length) {
       return null;

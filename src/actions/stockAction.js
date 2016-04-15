@@ -1,18 +1,18 @@
-import FluxAppDispatcher from '../dispatchers/FluxAppDispatcher';
+import FluxAppDispatcher from '../dispatchers/fluxAppDispatcher';
 import Constants from '../constants';
 
 export default class StockAction {
-  increaseStock(stock) {
+  static increaseStock(stock) {
     const actionPayload = {
-      type: Constants.Actions.FILL_STOCK,
+      type: Constants.FILL_STOCK,
       payload: stock,
     };
     FluxAppDispatcher.dispatch(actionPayload);
   }
 
-  decreaseStock(stock) {
+  static decreaseStock(stock) {
     const actionPayload = {
-      type: Constants.Actions.EMPTY_STOCK,
+      type: Constants.EMPTY_STOCK,
       payload: stock,
     };
     FluxAppDispatcher.dispatch(actionPayload);

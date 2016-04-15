@@ -8,7 +8,7 @@ export default class ItemProduct extends React.Component {
     return (
       <div className="line">
         {this.props.children}
-        <button onClick={() => {}}>Add</button>
+        <button onClick={this.props.onAdd}>Add</button>
       </div>
     );
   }
@@ -16,4 +16,5 @@ export default class ItemProduct extends React.Component {
 
 ItemProduct.propTypes = {
   children: React.PropTypes.element,
+  onAdd: React.PropTypes.func,
 };

@@ -1,14 +1,17 @@
 import React from 'react';
 import Product from './product';
 import ItemProduct from './itemProduct';
+import StockAction from '../actions/stockAction';
 
 export default class Shelf extends React.Component {
   render() {
     const products = this.props.products.map(
-      (product, index) =>
-        <ItemProduct key={index}>
+      (product, index) => {
+        const sendStockAction = StockAction.increaseStock.bind(this, product);
+        return (<ItemProduct key={index} onAdd={sendStockAction}>
           <Product product={product} withStock={true} />
-        </ItemProduct>
+        </ItemProduct>);
+      }
     );
     if (!products.length) {
       return null;
