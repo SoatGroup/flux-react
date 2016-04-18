@@ -7,10 +7,6 @@ export default class Constants {
     return 'REMOVE_FROM_BASKET';
   }
 
-  static get DECREASE_STOCK() {
-    return 'DECREASE_STOCK';
-  }
-
   static get FILL_STOCK() {
     return 'FILL_STOCK';
   }
