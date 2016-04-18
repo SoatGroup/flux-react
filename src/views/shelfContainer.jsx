@@ -19,7 +19,6 @@ export default class ShelfContainer extends React.Component {
   }
 
   onChange() {
-    console.log('coucou depuis le composant Sheld container');
     this.setState({
       products: ShelfStore.getState(),
     });

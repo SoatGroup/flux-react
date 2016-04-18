@@ -26,8 +26,13 @@ class ShelfStore extends EventEmmiter {
 const shelfStore = new ShelfStore();
 
 shelfStore.token = Dispatcher.register((actionPayload) => {
-  console.log(actionPayload);
+  console.log('ShelfStore', actionPayload);
+  const product = products.find(item => item.id === actionPayload.payload.id);
   if (actionPayload.type === Constants.FILL_STOCK) {
+    product.quantity += 1;
+    shelfStore.emitChange();
+  } else if (actionPayload.type === Constants.EMPTY_STOCK) {
+    product.quantity -= 1;
     shelfStore.emitChange();
   }
 });

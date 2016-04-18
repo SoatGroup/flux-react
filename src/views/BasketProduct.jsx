@@ -6,9 +6,9 @@ export default class BasketProduct extends React.Component {
       return null;
     }
     return (
-      <div>
+      <div className="line">
         {this.props.children}
-        <button onClick={() => {}}>Delete</button>
+        <button onClick={this.props.onDelete}>Delete</button>
       </div>
     );
   }
@@ -16,4 +16,5 @@ export default class BasketProduct extends React.Component {
 
 BasketProduct.propTypes = {
   children: React.PropTypes.element,
+  onDelete: React.PropTypes.func,
 };

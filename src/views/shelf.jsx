@@ -1,14 +1,19 @@
 import React from 'react';
 import Product from './product';
 import ItemProduct from './itemProduct';
+import BasketAction from '../actions/basketAction';
 import StockAction from '../actions/stockAction';
+import { cloneDeep } from 'lodash';
 
 export default class Shelf extends React.Component {
   render() {
     const products = this.props.products.map(
       (product, index) => {
-        const sendStockAction = StockAction.increaseStock.bind(this, product);
-        return (<ItemProduct key={index} onAdd={sendStockAction}>
+        const addActions = ((product) => {
+          StockAction.decreaseStock(product);
+          BasketAction.addProduct(product);
+        }).bind(this, cloneDeep(product));
+        return (<ItemProduct key={index} onAdd={addActions}>
           <Product product={product} withStock={true} />
         </ItemProduct>);
       }
