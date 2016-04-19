@@ -6,9 +6,11 @@ export default class BasketProduct extends React.Component {
       return null;
     }
     return (
-      <div className="line">
+      <div className="line panel panel-default">
         {this.props.children}
-        <button onClick={this.props.onDelete}>Delete</button>
+        <div className="col-lg-2 btnBlock">
+        <button onClick={this.props.onDelete} className="btn btn-danger">Delete</button>
+        </div>
       </div>
     );
   }

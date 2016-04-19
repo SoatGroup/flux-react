@@ -20,7 +20,8 @@ export default class Basket extends React.Component {
       return null;
     }
     return (
-      <div className="basket half-panel">
+      <div className="basket col-lg-6">
+        <h2>My basket</h2>
         {products}
       </div>
     );

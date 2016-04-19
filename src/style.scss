@@ -1,11 +1,28 @@
+@import "bootstrap";
+
 div {
-  .half-panel{
-    display: inline-block;
-    width: 50%
-  }
   .line{
     display: flex;
     justify-content: space-around;
     margin: 20px 0px;
+        align-items: baseline;
   }
 }
+
+body {
+  background-color:#EDEDED;
+}
+.page-header { border-color:#000; }
+.qty { 
+  text-align: right;
+ }
+ 
+ .price {
+  text-align:left;
+  &:after { content:' \20AC'; }
+ }
+ 
+ .btnBlock {
+   position:relative;
+   bottom:20px;
+ }
