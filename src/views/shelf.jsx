@@ -22,7 +22,8 @@ export default class Shelf extends React.Component {
       return null;
     }
     return (
-      <div className="shelf half-panel">
+      <div className="shelf col-lg-6">
+        <h2>Product list</h2>
         {products}
       </div>
     );

@@ -6,10 +6,10 @@ export default class Product extends React.Component {
       return null;
     }
     return (
-      <div className="product">
-        <div>{this.props.product.name}</div>
-        <div>{this.props.product.price}</div>
-        <div>{this.props.product.quantity}</div>
+      <div className="product col-lg-10">
+        <h3 className="col-lg-12">{this.props.product.name}</h3>
+        <div className="col-lg-6 price">{this.props.product.price}</div>
+        <div className="col-lg-6 qty">{this.props.product.quantity}</div>
       </div>
     );
   }

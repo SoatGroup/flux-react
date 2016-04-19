@@ -1,25 +1,25 @@
 [
   {
     "id": "ID",
-    "name":"product1",
+    "name":"Avengers - Blu-ray",
     "price": 19.99,
     "quantity": 10
   },
   {
     "id": "ID2",
-    "name":"product2",
+    "name":"Captain America: Civil War - Blu-ray",
     "price": 19.99,
     "quantity": 10
   },
   {
     "id": "ID3",
-    "name":"product3",
+    "name":"Thor: Ragnarok - Blu-ray",
     "price": 19.99,
     "quantity": 10
   },
   {
     "id": "ID4",
-    "name":"product4",
+    "name":"Antman - Blu-ray",
     "price": 19.99,
     "quantity": 10
   }

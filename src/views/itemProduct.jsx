@@ -6,9 +6,9 @@ export default class ItemProduct extends React.Component {
       return null;
     }
     return (
-      <div className="line">
+      <div className="line panel panel-default">
         {this.props.children}
-        <button onClick={this.props.onAdd}>Add</button>
+        <div className="col-lg-2 btnBlock"><button onClick={this.props.onAdd} className="btn btn-primary">Add</button></div>
       </div>
     );
   }
