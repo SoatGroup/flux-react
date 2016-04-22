@@ -1,20 +1,20 @@
-import FluxAppDispatcher from '../dispatchers/fluxAppDispatcher';
+import FluxAppDispatcher from '../dispatcher/fluxAppDispatcher';
 import Constants from '../constants';
 
 export default class BasketAction {
   static addProduct(product) {
-    const actionPayload = {
+    const addBasketActionObject = {
       type: Constants.ADD_TO_BASKET,
       payload: product,
     };
-    FluxAppDispatcher.dispatch(actionPayload);
+    FluxAppDispatcher.dispatch(addBasketActionObject);
   }
 
   static removeProduct(product) {
-    const actionPayload = {
+    const removeBasketActionObject = {
       type: Constants.REMOVE_FROM_BASKET,
       payload: product,
     };
-    FluxAppDispatcher.dispatch(actionPayload);
+    FluxAppDispatcher.dispatch(removeBasketActionObject);
   }
 }
