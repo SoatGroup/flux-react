@@ -7,20 +7,29 @@
     "react-dom": "^15.0"
   },
   "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-jest": "^12.0.2",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.7.2",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-import": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
     "express": "^4.13.4",
+    "jest": "^0.1.40",
+    "jest-cli": "^12.0.2",
+    "jsdom": "^9.0.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.11.1",
+    "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
+    "react-addons-test-utils": "^15.0.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
@@ -31,6 +40,43 @@
     "watch": "webpack --progress --colors --watch",
     "start": "node server.js",
     "monitor": "webpack-dev-server --hot --inline --colors --content-base public/ --host=127.0.0.1",
-    "package": "webpack --progress --colors -p"
+    "package": "webpack --progress --colors -p",
+    "test": "npm run test-enzyme",
+    "test-enzyme": "mocha --compilers js:babel-core/register --require ./test/jsdom-setup.js \"test/enzyme/**/*.@(js|jsx)\"",
+    "test-jest": "jest --no-cache"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "comments": true,
+    "compact": false
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "preprocessorIgnorePatterns": [
+      "/node_modules/",
+      "/fonts/",
+      "/bootstrap/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "cacheDirectory": "<rootDir>/jest-cache",
+    "testRunner": "jasmine2",
+    "testPathDirs": [
+      "test/jest"
+    ]
   }
 }
