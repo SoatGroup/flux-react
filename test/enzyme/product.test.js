@@ -10,8 +10,11 @@ describe('Product', () => {
     const product = shallow(
         <Product
             product={{}}
-            withStock={true}
+            withStock={false}
         />
     );
+    console.log(product.debug());
+    const productTitle = product.find('h3');
+    expect(productTitle.text()).to.be.empty;
   });
 });
