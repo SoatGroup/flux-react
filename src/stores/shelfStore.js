@@ -1,5 +1,5 @@
 import Constants from '../constants';
-import Dispatcher from '../dispatchers/fluxAppDispatcher';
+import Dispatcher from '../dispatcher/fluxAppDispatcher';
 import EventEmmiter from 'events';
 import initProduct from '../data.json';
 const products = initProduct;

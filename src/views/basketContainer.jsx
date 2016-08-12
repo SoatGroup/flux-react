@@ -1,5 +1,5 @@
 import React from 'react';
-import Dispatcher from '../dispatchers/fluxAppDispatcher';
+import Dispatcher from '../dispatcher/fluxAppDispatcher';
 import BasketStore from '../stores/basketStore';
 import Basket from './basket';
 

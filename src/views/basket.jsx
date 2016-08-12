@@ -3,19 +3,23 @@ import Product from './product';
 import BasketProduct from './basketProduct';
 import BasketAction from '../actions/basketAction';
 import StockAction from '../actions/stockAction';
+import { cloneDeep } from 'lodash';
 
 export default class Basket extends React.Component {
+
+  triggerActions(product) {
+    BasketAction.removeProduct(product);
+    StockAction.increaseStock(product);
+  }
+
   render() {
     const products = this.props.products.map(
-      (product, index) => {
-        const deleteAction = ((product) => {
-          BasketAction.removeProduct(product);
-          StockAction.increaseStock(product);
-        }).bind(this, product);
-        return (<BasketProduct key={index} onDelete={deleteAction}>
+      (product, index) =>
+        // cloneDeep to have a separate instance of product in emitted action
+        <BasketProduct key={index} onDelete={this.triggerActions.bind(this, cloneDeep(product))}>
           <Product product={product} />
-        </BasketProduct>);
-      });
+        </BasketProduct>
+    );
     if (!products.length) {
       return null;
     }

@@ -2,3 +2,4 @@
 /.idea
 /bundle.js
 /public/bundle.js
+/public/bundle.js.map
