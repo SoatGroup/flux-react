@@ -1,3 +1,4 @@
+'use strict';
 jest.unmock('../../../src/views/product');
 
 import React from 'react';
@@ -12,11 +13,10 @@ describe('Product', () => {
     const testedComponent = renderIntoDocument(
       <Product
         product={{}}
-        withStock={true}
+        withStock={false}
       />
     );
     const productTitle = findRenderedDOMComponentWithTag(testedComponent, 'h3');
-    console.log("text content:", productTitle.textContent);
     expect(productTitle.textContent).toEqual('');
   });
 });
